@@ -12,14 +12,14 @@ function HTTPLock (log, config) {
   this.log = log
 
   this.name = config.name
-  this.intercomIp = config.intercomIp
+  this.intercomUrl = config.intercomUrl
   this.switchId = config.switchId || 1
 
   this.autoLock = config.autoLock || false
   this.autoLockDelay = config.autoLockDelay || 10
 
   this.manufacturer = config.manufacturer || packageJson.author.name
-  this.serial = config.serial || this.intercomIp
+  this.serial = config.serial || this.intercomUrl
   this.model = config.model || packageJson.name
   this.firmware = config.firmware || packageJson.version
 
@@ -62,7 +62,7 @@ HTTPLock.prototype = {
   },
 
   _getStatus: function (callback) {
-    var url = this.intercomIp + '/api/switch/status?switch=' + this.switchId
+    var url = this.intercomUrl + '/api/switch/status?switch=' + this.switchId
     this.log.debug('Getting status: %s', url)
 
     this._httpRequest(url, '', 'GET', function (error, response, responseBody) {
@@ -73,7 +73,7 @@ HTTPLock.prototype = {
       } else {
         this.log.debug('Device response: %s', responseBody)
         var json = JSON.parse(responseBody)
-        var switchActive = json.result.switches[0].active;
+        var switchActive = json.result.switches[0].active ? 0 : 1; // active=true is unlocked, 0=open, 1=closed
         this.service.getCharacteristic(Characteristic.LockCurrentState).updateValue(switchActive)
         this.service.getCharacteristic(Characteristic.LockTargetState).updateValue(switchActive)
         this.log.debug('Updated state to: %s', switchActive)
@@ -83,7 +83,7 @@ HTTPLock.prototype = {
   },
 
   setLockTargetState: function (value, callback) {
-    var url = this.intercomIp + '/api/switch/ctrl?switch=' + this.switchId + '&action=' + value === 0 ? 'on' : 'off'
+    var url = this.intercomUrl + '/api/switch/ctrl?switch=' + this.switchId + '&action=' + (value === 0 ? 'on' : 'off') // 0=open, 1=closed
     this.log.debug('Setting state: %s', url)
 
     this._httpRequest(url, '', this.http_method, function (error, response, responseBody) {
