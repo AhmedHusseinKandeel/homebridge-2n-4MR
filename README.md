@@ -1,3 +1,5 @@
+**This is a fork of `homebridge-http-lock-mechanism` specifically for integrating the switch functionality on the 2N Helios intercom.**
+
 <p align="center">
   <a href="https://github.com/homebridge/homebridge"><img src="https://raw.githubusercontent.com/homebridge/branding/master/logos/homebridge-color-round-stylized.png" height="140"></a>
 </p>
