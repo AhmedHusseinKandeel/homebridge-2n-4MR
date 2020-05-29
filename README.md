@@ -2,7 +2,7 @@
 
 ## Configuration
 
-```json
+```javascript
 "accessories": [
      {
        "accessory": "HTTPLock",
