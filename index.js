@@ -5,20 +5,21 @@ const request = require('request')
 module.exports = function (homebridge) {
   Service = homebridge.hap.Service
   Characteristic = homebridge.hap.Characteristic
-  homebridge.registerAccessory('homebridge-http-lock-mechanism', 'HTTPLock', HTTPLock)
+  homebridge.registerAccessory('homebridge-2n-helios-switch', 'HTTPLock', HTTPLock)
 }
 
 function HTTPLock (log, config) {
   this.log = log
 
   this.name = config.name
-  this.apiroute = config.apiroute
+  this.intercomIp = config.intercomIp
+  this.switchId = config.switchId || 1
 
   this.autoLock = config.autoLock || false
   this.autoLockDelay = config.autoLockDelay || 10
 
   this.manufacturer = config.manufacturer || packageJson.author.name
-  this.serial = config.serial || this.apiroute
+  this.serial = config.serial || this.intercomIp
   this.model = config.model || packageJson.name
   this.firmware = config.firmware || packageJson.version
 
@@ -61,7 +62,7 @@ HTTPLock.prototype = {
   },
 
   _getStatus: function (callback) {
-    var url = this.apiroute + '/status'
+    var url = this.intercomIp + '/api/switch/status?switch=' + this.switchId
     this.log.debug('Getting status: %s', url)
 
     this._httpRequest(url, '', 'GET', function (error, response, responseBody) {
@@ -72,16 +73,17 @@ HTTPLock.prototype = {
       } else {
         this.log.debug('Device response: %s', responseBody)
         var json = JSON.parse(responseBody)
-        this.service.getCharacteristic(Characteristic.LockCurrentState).updateValue(json.currentState)
-        this.service.getCharacteristic(Characteristic.LockTargetState).updateValue(json.currentState)
-        this.log.debug('Updated state to: %s', json.currentState)
+        var switchActive = json.result.switches[0].active;
+        this.service.getCharacteristic(Characteristic.LockCurrentState).updateValue(switchActive)
+        this.service.getCharacteristic(Characteristic.LockTargetState).updateValue(switchActive)
+        this.log.debug('Updated state to: %s', switchActive)
         callback()
       }
     }.bind(this))
   },
 
   setLockTargetState: function (value, callback) {
-    var url = this.apiroute + '/setState?value=' + value
+    var url = this.intercomIp + '/api/switch/ctrl?switch=' + this.switchId + '&action=' + value === 0 ? 'on' : 'off'
     this.log.debug('Setting state: %s', url)
 
     this._httpRequest(url, '', this.http_method, function (error, response, responseBody) {
