@@ -1,4 +1,4 @@
-**This is a fork of `[homebridge-http-lock-mechanism](https://github.com/Tommrodrigues/homebridge-http-lock-mechanism)` specifically for integrating the switch functionality on the 2N Helios intercom.**
+**This is a fork of [`homebridge-http-lock-mechanism`](https://github.com/Tommrodrigues/homebridge-http-lock-mechanism) specifically for integrating the switch functionality on the 2N Helios intercom.**
 
 ## Configuration
 
@@ -15,5 +15,5 @@
 ]
 ```
 
-- Requires 2N intercom with Enhanced Integration license for HTTP API access
+- Requires 2N intercom with "Enhanced Integration" license for HTTP API access
 - Requires "Switch API" authentication configured to "Basic"
