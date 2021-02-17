@@ -15,9 +15,6 @@ function HTTPLock (log, config) {
   this.intercomUrl = config.intercomUrl
   this.switchId = config.switchId || 1
 
-  this.autoLock = config.autoLock || false
-  this.autoLockDelay = config.autoLockDelay || 10
-
   this.manufacturer = config.manufacturer || packageJson.author.name
   this.serial = config.serial || this.intercomUrl
   this.model = config.model || packageJson.name
@@ -93,20 +90,9 @@ HTTPLock.prototype = {
       } else {
         this.log('Set state to %s', value)
         this.service.getCharacteristic(Characteristic.LockCurrentState).updateValue(value)
-        if (value === 1 && this.autoLock) {
-          this.autoLockFunction()
-        }
         callback()
       }
     }.bind(this))
-  },
-
-  autoLockFunction: function () {
-    this.log('Waiting %s seconds for autolock', this.autoLockDelay)
-    setTimeout(() => {
-      this.service.setCharacteristic(Characteristic.LockTargetState, 1)
-      this.log('Autolocking...')
-    }, this.autoLockDelay * 1000)
   },
 
   getServices: function () {
