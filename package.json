@@ -1,6 +1,6 @@
 {
   "name": "homebridge-2n-helios-switch",
-  "version": "1.3.4",
+  "version": "1.0.0",
   "description": "Homebridge plugin for an 2N Helios intercom switch lock",
   "main": "index.js",
   "engines": {

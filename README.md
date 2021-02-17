@@ -5,8 +5,8 @@
 ```javascript
 "accessories": [
      {
-       "accessory": "HTTPLock",
-       "name": "Lock",
+       "accessory": "HeliosSwitch",
+       "name": "Front gate",
        "intercomUrl": "http://192.168.0.200", // URL of the 2N intercom
        "username": "admin", // HTTP API account username
        "password": "password", // HTTP API account password

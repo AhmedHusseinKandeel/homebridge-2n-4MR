@@ -5,10 +5,10 @@ const request = require('request')
 module.exports = function (homebridge) {
   Service = homebridge.hap.Service
   Characteristic = homebridge.hap.Characteristic
-  homebridge.registerAccessory('homebridge-2n-helios-switch', 'HTTPLock', HTTPLock)
+  homebridge.registerAccessory('homebridge-2n-helios-switch', 'HeliosSwitch', HeliosSwitch)
 }
 
-function HTTPLock (log, config) {
+function HeliosSwitch (log, config) {
   this.log = log
 
   this.name = config.name
@@ -37,7 +37,7 @@ function HTTPLock (log, config) {
   this.service = new Service.LockMechanism(this.name)
 }
 
-HTTPLock.prototype = {
+HeliosSwitch.prototype = {
 
   identify: function (callback) {
     this.log('Identify requested!')
