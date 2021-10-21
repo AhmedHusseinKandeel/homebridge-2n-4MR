@@ -16,7 +16,7 @@ npm i -g homebridge-2n-helios-switch@latest
 
 ## Homebridge config
 
-```json
+```javascript
     "platforms": [
         {
             "platform": "2NSwitch",
