@@ -1,0 +1,44 @@
+{
+  "pluginAlias": "2NSwitch",
+  "pluginType": "platform",
+  "singular": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "Intercom switch"
+      },
+      "intercomHost": {
+        "title": "Intercom host",
+        "type": "string",
+        "required": true,
+        "placeholder": "http://192.168.1.101"
+      },
+      "switchId": {
+        "title": "Switch ID",
+        "type": "integer",
+        "required": false,
+        "placeholder": "1"
+      },
+      "username": {
+        "title": "Username",
+        "type": "string",
+        "required": false
+      },
+      "password": {
+        "title": "Password",
+        "type": "string",
+        "required": false
+      },
+      "httpPort": {
+        "title": "HTTP port",
+        "type": "integer",
+        "required": true,
+        "default": 9010
+      }
+    }
+  }
+}

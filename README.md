@@ -1,20 +1,37 @@
-**This is a fork of [`homebridge-http-lock-mechanism`](https://github.com/Tommrodrigues/homebridge-http-lock-mechanism) specifically for integrating the switch functionality on [2N intercoms](https://www.2n.cz/en_GB/products/intercoms).**
+# homebridge-2n-helios-switch
+ Homebridge plugin for controlling 2N Intercom switches to open gates/doors
+ 
+- Adds a Homekit lock mechanism
+  - Unlock - switch state on
+  - Lock - switch state off
+- Requires 2N intercom with "Enhanced Integration" license for HTTP API access
+- Requires "Switch API" authentication configured to "Basic" (username/password access)
+- Create and enable "HTTP API" account with "control" user priviledges to "Switch Access"
 
-## Configuration
+## Install
 
-```javascript
-"accessories": [
-     {
-       "accessory": "HeliosSwitch",
-       "name": "Front gate",
-       "intercomUrl": "http://192.168.0.200", // URL of the 2N intercom
-       "username": "admin", // HTTP API account username
-       "password": "password", // HTTP API account password
-       "pollInterval": 1 // how frequently (in seconds) to poll for switch status
-     }
-]
+```
+npm i -g homebridge-2n-helios-switch@latest
 ```
 
-- Requires 2N intercom with "Enhanced Integration" license for HTTP API access
-- Requires "Switch API" authentication configured to "Basic"
-- Enable "HTTP API" account with access to "Switch Access"
+## Homebridge config
+
+```json
+    "platforms": [
+        {
+            "platform": "2NSwitch",
+            "name": "Intercom switch",
+            "intercomHost": "http://192.168.1.3", // set to the IP of your 2N intercom
+            "username": "admin", // HTTP API account username
+            "password": "password", // HTTP API account password
+            "httpPort": 9010 // HTTP web server port to receive switch-on/off commands from the 2N intercom
+        }
+```
+
+## HTTP listening server
+This plugin uses a HTTP listening web server to receive switch on/off commands from 2N Intercom to update the switch status immediately. (It does not poll for status)
+
+In the 2N intercom web UI, go to `Hardware` > `Switches` > expand `HTTP Commands`.
+
+Set the "Switch-On Command" to `http://[homebridge_ip]:[config_httpPort]/on`
+Set the "Switch-Off Command" to `http://[homebridge_ip]:[config_httpPort]/off`
