@@ -87,11 +87,11 @@ export class HeliosSwitchAccessory implements AccessoryPlugin {
       .updateValue(switchValue);
   };
 if(switchValue){
-    this.pushEvent('server-time-event', {
+    this.pushEvent('Switch-Status', {
         message: "The Switch is ON",
       });
     }else{
-      this.pushEvent('server-time-event', {
+      this.pushEvent('Switch-Status', {
         message: "The Switch is OFF",
       });
     }
