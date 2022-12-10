@@ -86,4 +86,13 @@ export class HeliosSwitchAccessory implements AccessoryPlugin {
       .getCharacteristic(this.platform.Characteristic.LockTargetState)
       .updateValue(switchValue);
   };
+if(switchValue){
+    this.pushEvent('server-time-event', {
+        message: "The Switch is ON",
+      });
+    }else{
+      this.pushEvent('server-time-event', {
+        message: "The Switch is OFF",
+      });
+    }
 }
