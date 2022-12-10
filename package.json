@@ -25,6 +25,7 @@
   "keywords": [
     "homebridge-plugin","2N Intercom"
   ],
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^16.11.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
