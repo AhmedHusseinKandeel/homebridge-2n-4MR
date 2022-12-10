@@ -1,5 +1,6 @@
 {
   "name": "homebridge-2n-4MR",
+  "displayName": "homebridge-2n-4MR",
   "version": "1.0.0",
   "description": "Homebridge plugin for an 2N Helios intercom switch lock",
   "license": "Apache-2.0",
