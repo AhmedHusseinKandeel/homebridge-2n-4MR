@@ -1,5 +1,5 @@
-# homebridge-2n-helios-switch
- Homebridge plugin for controlling 2N Intercom switches to open gates/doors
+# homebridge-2n-4MR
+ Homebridge plugin for controlling 2N Intercom switches to open gates/doors and push notification
  
 - Adds a Homekit lock mechanism
   - Unlock - switch state on
@@ -11,7 +11,7 @@
 ## Install
 
 ```
-npm i -g homebridge-2n-helios-switch@latest
+npm i -g homebridge-2n-4MR@latest
 ```
 
 ## Homebridge config
@@ -19,7 +19,7 @@ npm i -g homebridge-2n-helios-switch@latest
 ```javascript
     "platforms": [
         {
-            "platform": "2NSwitch",
+            "platform": "2N-4MR",
             "name": "Intercom switch",
             "intercomHost": "http://192.168.1.3", // set to the IP of your 2N intercom
             "username": "admin", // HTTP API account username
