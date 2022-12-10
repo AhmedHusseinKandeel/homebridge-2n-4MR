@@ -11,7 +11,7 @@ import { Config } from './config';
 import { HomebridgePlatform } from './platform';
 import { HttpServer } from './server';
 
-export class HeliosSwitchAccessory implements AccessoryPlugin {
+export class homebridge-2n-4MRAccessory implements AccessoryPlugin {
   // This property must be existent!!
   public name: string;
 
