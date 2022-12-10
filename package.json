@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/AhmedHusseinKandeel/homebridge-2n-4MR.git#commit-ish"
+    "url": "git://github.com/AhmedHusseinKandeel/homebridge-2n-4MR.git#master"
   },
   "bugs": {
     "url": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR/issues"
