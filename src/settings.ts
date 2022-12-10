@@ -1,9 +1,9 @@
 /**
  * This is the name of the platform that users will use to register the plugin in the Homebridge config.json
  */
-export const PLATFORM_NAME = '2NSwitch';
+export const PLATFORM_NAME = 'homebridge-2n-4MR';
 
 /**
  * This must match the name of your plugin as defined the package.json
  */
-export const PLUGIN_NAME = 'homebridge-2n-helios-switch';
+export const PLUGIN_NAME = 'homebridge-2n-4MR';
