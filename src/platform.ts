@@ -8,7 +8,7 @@ import {
   AccessoryPlugin,
 } from 'homebridge';
 
-import { HeliosSwitchAccessory } from './platformAccessory';
+import { homebridge-2n-4MRAccessory } from './platformAccessory';
 import { Config } from './config';
 
 /**
