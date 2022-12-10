@@ -1,12 +1,11 @@
 {
   "name": "homebridge-2n-4MR",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Homebridge plugin for an 2N Helios intercom switch lock",
-  "author": "Long Zheng",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR.git"
+    "url": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR.git"
   },
   "bugs": {
     "url": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR/issues"
