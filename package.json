@@ -23,11 +23,8 @@
     "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": [
-    "homebridge-plugin"
+    "homebridge-plugin","2N Intercom"
   ],
-  "dependencies": {
-    "axios": "^0.23.0"
-  },
   "devDependencies": {
     "@types/node": "^16.11.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
