@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR.git"
   },
+  "publishConfig": {
+   "@AhmedHusseinKandeel:registry": "https://npm.pkg.github.com"
+ }
   "bugs": {
     "url": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR/issues"
   },
