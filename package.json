@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR#readme",
   "publishConfig": {
-    "@ahmedhusseinkandeel:registry": "https://npm.pkg.github.com"
+    "@AhmedHusseinKandeel:registry": "https://npm.pkg.github.com"
   }
 }
