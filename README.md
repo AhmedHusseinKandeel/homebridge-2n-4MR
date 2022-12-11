@@ -11,7 +11,7 @@
 ## Install
 
 ```
-npm i -g homebridge-2n-4MR@latest
+npm i @ahmedhusseinkandeel/homebridge-2n-4mr
 ```
 
 ## Homebridge config
