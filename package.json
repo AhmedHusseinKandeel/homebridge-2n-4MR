@@ -1,45 +1,19 @@
 {
-  "name": "homebridge-2n-4MR",
-  "displayName": "homebridge-2n-4MR",
+  "name": "@ahmedhusseinkandeel/homebridge-2n-4mr",
   "version": "1.0.0",
-  "description": "Homebridge plugin for an 2N Helios intercom switch lock",
-  "author": "AhmedHusseinKandeel<ahmed.hussein@su.edu.eg>",
-  "license": "Apache-2.0",
+  "description": "package home bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR.git"
   },
-  "publishConfig": {
-   "@AhmedHusseinKandeel:registry": "https://npm.pkg.github.com"
- }
+  "author": "su",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR/issues"
   },
-  "homepage": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR#readme",
-  "engines": {
-    "node": ">=14.18.1",
-    "homebridge": ">=1.3.5"
-  },
-  "main": "dist/index.js",
-  "scripts": {
-    "lint": "eslint src/**.ts --max-warnings=0",
-    "watch": "npm run build && npm link && nodemon",
-    "build": "rimraf ./dist && tsc",
-    "prepublishOnly": "npm run lint && npm run build"
-  },
-  "keywords": [
-    "homebridge-plugin","2N Intercom"
-  ],
-  "dependencies": {},
-  "devDependencies": {
-    "@types/node": "^16.11.1",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^8.0.1",
-    "homebridge": "^1.3.5",
-    "nodemon": "^2.0.13",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.3.0",
-    "typescript": "^4.4.4"
-  }
+  "homepage": "https://github.com/AhmedHusseinKandeel/homebridge-2n-4MR#readme"
 }
