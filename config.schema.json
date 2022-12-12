@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "homebridge-2n-4MR",
+  "pluginAlias": "2NSwitch",
   "pluginType": "platform",
   "singular": true,
   "schema": {

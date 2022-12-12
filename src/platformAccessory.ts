@@ -11,7 +11,7 @@ import { Config } from './config';
 import { HomebridgePlatform } from './platform';
 import { HttpServer } from './server';
 
-export class homebridge-2n-4MRAccessory implements AccessoryPlugin {
+export class HeliosSwitchAccessory implements AccessoryPlugin {
   // This property must be existent!!
   public name: string;
 
@@ -86,13 +86,13 @@ export class homebridge-2n-4MRAccessory implements AccessoryPlugin {
       .getCharacteristic(this.platform.Characteristic.LockTargetState)
       .updateValue(switchValue);
   };
-if(switchValue){
-    this.pushEvent('Switch-Status', {
-        message: "The Switch is ON",
-      });
-    }else{
-      this.pushEvent('Switch-Status', {
-        message: "The Switch is OFF",
-      });
-    }
+// if(switchValue){
+//     this.pushEvent('Switch-Status', {
+//         message: "The Switch is ON",
+//       });
+//     }else{
+//       this.pushEvent('Switch-Status', {
+//         message: "The Switch is OFF",
+//       });
+//     }
 }
