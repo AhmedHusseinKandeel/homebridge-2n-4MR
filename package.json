@@ -1,6 +1,6 @@
 {
   "name": "@ahmedhusseinkandeel/homebridge-2n-4mr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "package home bridge",
   "main": "dist/index.js",
   "type": "module",
